@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> The Visitor Returns 访客归来 </title>
+        <style>
+            body {
+                background-color: black;
+            }
+            iframe {
+                width: 80vw; 
+                height: 90vh; 
+            }
+            #fullscreenButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #1d1d1d4f;
+            color: #008200;
+            border: none;
+            border-radius: 5px;
+            position: absolute;
+            top: 670px;
+            right: 150px;
+        }
+        .fixed-text {
+             position: fixed;
+             bottom: 0;
+             left: 0;
+             color: #1AE5C9;
+             margin: 5px; 
+        }
+        #backButton {
+            background-color: #1d1d1d4f;
+            color: #008200;
+        }
+        </style>
+        <body>
+<button id="backButton" onclick="goBack()">退出游戏</button>
+<center>
+<iframe src="https://f.kbhgames.com/RS/game.php?r=//f.kbhgames.com/2018/swf/the-visitor-returns.swf&w=800&h=469&warnsupport=true" frameborder="0" allowfullscreen="true" scrolling="no" id="game_drop" allow="autoplay; fullscreen *; geolocation; microphone; camera; midi; monetization; xr-spatial-tracking; gamepad; gyroscope; accelerometer; cross-origin-isolated"></iframe>
+</center>
+<button id="fullscreenButton" onclick="toggleFullscreen()">全屏</button>
+<p class="fixed-text">火狮 H.S.T.</p>
+<br><br>
+<script>
+    function toggleFullscreen() {
+        var iframe = document.getElementById('game_drop');
+        if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) { 
+            iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) { 
+            iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { 
+            iframe.msRequestFullscreen();
+        }
+    }
+    function goBack() {
+        window.history.back();
+    }
+</script>
+        </body>
+    </html>
